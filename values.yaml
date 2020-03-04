@@ -59,6 +59,15 @@ kashti:
 brigade-github-app:
   enabled: false
   github:
+    #affinity:
+    #  nodeAffinity:
+    #    requiredDuringSchedulingIgnoredDuringExecution:
+    #      nodeSelectorTerms:
+    #      - matchExpressions:
+    #        - key: agentpool
+    #          operator: In
+    #          values:
+    #          - nodepool01
     ## Set a defaultSharedSecret if you want to use this one instance of the
     ## Github gateway with multiple Brigade projects. Leave the shared secret
     ## field blank in project-level configuration and this default will be used.
@@ -94,6 +103,19 @@ controller:
   ## The default tag is the value of .Chart.AppVersion
   # tag:
   # pullPolicy: IfNotPresent
+
+  ## nodepool to schedule workers into
+  # workerNodePool: nodepool01
+  #affinity:
+  #  nodeAffinity:
+  #    requiredDuringSchedulingIgnoredDuringExecution:
+  #      nodeSelectorTerms:
+  #      - matchExpressions:
+  #        - key: agentpool
+  #          operator: In
+  #          values:
+  #          - nodepool01
+
   # workerResources:
   #   limits:
   #     cpu:
@@ -138,6 +160,15 @@ api:
   serviceAccount:
     create: true
     name:
+  #affinity:
+  #  nodeAffinity:
+  #    requiredDuringSchedulingIgnoredDuringExecution:
+  #      nodeSelectorTerms:
+  #      - matchExpressions:
+  #        - key: agentpool
+  #          operator: In
+  #          values:
+  #          - nodepool01
   ## Add custom annotations to the api pod
   # podAnnotations:
   #   name: value
