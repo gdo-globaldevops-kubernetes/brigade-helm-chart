@@ -44,6 +44,16 @@
 ## For full configuration, see the kashti chart in this repository and its values.yaml.
 kashti:
   enabled: true
+# kashti:
+#   affinity:
+#     nodeAffinity:
+#       requiredDuringSchedulingIgnoredDuringExecution:
+#         nodeSelectorTerms:
+#         - matchExpressions:
+#           - key: agentpool
+#             operator: In
+#             values:
+#             - nodepool01
 
 ## Brigade Github App, the GitHub Gateway for Brigade, is disabled by default.
 ##
@@ -301,6 +311,16 @@ vacuum:
   successfulJobsHistoryLimit: 10
   ## The maximum number of failed vacuum jobs to retain in the cluster.
   failedJobsHistoryLimit: 10
+  # Affinity
+  #affinity:
+  #  nodeAffinity:
+  #    requiredDuringSchedulingIgnoredDuringExecution:
+  #      nodeSelectorTerms:
+  #      - matchExpressions:
+  #        - key: agentpool
+  #          operator: In
+  #          values:
+  #          - nodepool01
 
 ## DEVELOPMENT ONLY: Use this for off-ACS development
 ## Before enabling this, log into the acr registry with Docker and then
