@@ -31,7 +31,7 @@ spec:
       serviceAccountName: {{ $serviceAccount }}
       {{ if .Values.controller.affinity }}
       affinity:
-{{ toYaml .Values.controller.affinities | indent 8}}
+{{ toYaml .Values.controller.affinity | indent 8}}
       {{- end }}
       containers:
       - name: {{ .Chart.Name }}
