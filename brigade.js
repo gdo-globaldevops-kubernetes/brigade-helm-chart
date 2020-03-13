@@ -1,5 +1,5 @@
 const devops = require("devops-brigade");
-devops.Events.onPushDevelop(async () => {
+devops.Events.onPushOther(async () => {
   await devops.Utilities.gitVersionAsync();
   await devops.Standard.publishHelmChartAsync({ 
     chartName: "brigade", 
