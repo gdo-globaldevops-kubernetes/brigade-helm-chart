@@ -44,7 +44,8 @@
 ## For full configuration, see the kashti chart in this repository and its values.yaml.
 kashti:
   enabled: true
-# kashti:
+  kashti:
+    affinity: {}
 #   affinity:
 #     nodeAffinity:
 #       requiredDuringSchedulingIgnoredDuringExecution:
@@ -69,6 +70,7 @@ kashti:
 brigade-github-app:
   enabled: false
   github:
+    affinity: {}
     #affinity:
     #  nodeAffinity:
     #    requiredDuringSchedulingIgnoredDuringExecution:
@@ -116,6 +118,7 @@ controller:
 
   ## nodepool to schedule workers into
   # workerNodePool: nodepool01
+  affinity: {}
   #affinity:
   #  nodeAffinity:
   #    requiredDuringSchedulingIgnoredDuringExecution:
@@ -170,6 +173,7 @@ api:
   serviceAccount:
     create: true
     name:
+  affinity: {}
   #affinity:
   #  nodeAffinity:
   #    requiredDuringSchedulingIgnoredDuringExecution:
@@ -312,6 +316,7 @@ vacuum:
   ## The maximum number of failed vacuum jobs to retain in the cluster.
   failedJobsHistoryLimit: 10
   # Affinity
+  affinity: {}
   #affinity:
   #  nodeAffinity:
   #    requiredDuringSchedulingIgnoredDuringExecution:
